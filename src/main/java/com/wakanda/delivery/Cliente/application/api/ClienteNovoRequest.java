@@ -1,6 +1,9 @@
 package com.wakanda.delivery.Cliente.application.api;
 
-public class CriarClienteRequest {
+import lombok.Value;
+
+@Value
+public class ClienteNovoRequest {
 
     String nome;
     String cpf;

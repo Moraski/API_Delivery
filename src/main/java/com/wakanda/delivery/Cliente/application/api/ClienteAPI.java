@@ -13,6 +13,6 @@ public interface ClienteAPI {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    ClienteResponse postNovoCliente(@RequestBody @Valid CriarClienteRequest cliente);
+    ClienteResponse postNovoCliente(@RequestBody @Valid ClienteNovoRequest cliente);
 
 }
