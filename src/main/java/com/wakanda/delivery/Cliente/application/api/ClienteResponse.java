@@ -1,11 +1,12 @@
 package com.wakanda.delivery.Cliente.application.api;
 
 import com.wakanda.delivery.Cliente.domain.Cliente;
+import lombok.Value;
 
 import java.util.UUID;
 
+@Value
 public class ClienteResponse {
-
 
      UUID idCliente;
      String nome;

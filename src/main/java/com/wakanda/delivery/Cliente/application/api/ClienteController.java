@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @Log4j2
 @RequiredArgsConstructor
-public class ClienteController {
+public class ClienteController implements ClienteAPI{
 
     private final ClienteService clienteService;
 
