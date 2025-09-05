@@ -22,6 +22,8 @@ public interface ClienteAPI {
     @ResponseStatus(code = HttpStatus.OK)
     ClienteResponse atualizaCliente(@PathVariable UUID idCliente, @RequestBody @Valid EditaClienteRequest cliente);
 
-
+    @DeleteMapping(value = "/{idCliente}/delete")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    Void deletaCliente(@PathVariable UUID idCliente);
 
 }
