@@ -2,6 +2,7 @@ package com.wakanda.delivery.Cliente.application.service;
 
 import com.wakanda.delivery.Cliente.application.api.ClienteResponse;
 import com.wakanda.delivery.Cliente.application.api.ClienteNovoRequest;
+import com.wakanda.delivery.Cliente.application.api.EditaClienteRequest;
 import com.wakanda.delivery.Cliente.application.repository.ClienteRepository;
 import com.wakanda.delivery.Cliente.domain.Cliente;
 import jakarta.validation.Valid;
@@ -32,6 +33,15 @@ public class ClienteApplicationService implements ClienteService{
         log.info("[Inicia] ClienteApplicationService - buscarClientePorId");
         Cliente cliente = clienteRepository.buscaPorId(idCliente);
         log.info("[Finaliza] ClienteApplicationService - buscarClientePorId");
+        return new ClienteResponse(cliente);
+    }
+
+    @Override
+    public ClienteResponse AtualizaCliente(UUID idCliente, EditaClienteRequest clienteNovo) {
+        log.info("[Inicia] ClienteApplicationService - AtualizaCliente");
+        Cliente cliente = clienteRepository.buscaPorId(idCliente);
+        clienteRepository.salva(cliente);
+        log.info("[Finaliza] ClienteApplicationService - AtualizaCliente");
         return new ClienteResponse(cliente);
     }
 }
