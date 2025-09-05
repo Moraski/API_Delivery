@@ -42,4 +42,12 @@ public class ClienteController implements ClienteAPI{
         log.info("[Inicia] ClienteController - atualizaCliente");
         return clieteResponse;
     }
+
+    @Override
+    public Void deletaCliente(UUID idCliente) {
+        log.info("[Inicia] ClienteController - deletaCliente");
+        clienteService.DeletaCliente(idCliente);
+        log.info("[Inicia] ClienteController - deletaCliente");
+        return null;
+    }
 }
