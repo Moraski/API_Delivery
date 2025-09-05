@@ -33,4 +33,13 @@ public class ClienteController implements ClienteAPI{
         log.info("[Inicia] ClienteController - getNovoCliente");
         return clienteResponse;
     }
+
+    @Override
+    public ClienteResponse atualizaCliente(UUID idCliente, EditaClienteRequest cliente) {
+        log.info("[Inicia] ClienteController - atualizaCliente");
+        log.info("[idUsuario] {}", idCliente);
+        ClienteResponse clieteResponse = clienteService.AtualizaCliente(idCliente, cliente);
+        log.info("[Inicia] ClienteController - atualizaCliente");
+        return clieteResponse;
+    }
 }
