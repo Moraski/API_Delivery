@@ -40,6 +40,7 @@ public class ClienteApplicationService implements ClienteService{
     public ClienteResponse AtualizaCliente(UUID idCliente, EditaClienteRequest clienteNovo) {
         log.info("[Inicia] ClienteApplicationService - AtualizaCliente");
         Cliente cliente = clienteRepository.buscaPorId(idCliente);
+        cliente.editaCliente(clienteNovo.getNome(), clienteNovo.getCpf(), clienteNovo.getEmail(), clienteNovo.getTelefone(),clienteNovo.getEndereco());
         clienteRepository.salva(cliente);
         log.info("[Finaliza] ClienteApplicationService - AtualizaCliente");
         return new ClienteResponse(cliente);
