@@ -2,9 +2,13 @@ package com.wakanda.delivery.Cliente.infra;
 
 import com.wakanda.delivery.Cliente.application.repository.ClienteRepository;
 import com.wakanda.delivery.Cliente.domain.Cliente;
+import com.wakanda.delivery.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
 
 @Repository
 @RequiredArgsConstructor
@@ -19,5 +23,14 @@ public class ClienteRepositoryMySQL implements ClienteRepository {
         Cliente novoCliente = clienteMySQLSpringRepository.save(cliente);
         log.info("[Finaliza] ClienteRepositoryMySQL - salva");
         return novoCliente;
+    }
+
+    @Override
+    public Cliente buscaPorId(UUID idCliente) {
+        log.info("[Inicia] ClienteRepositoryMySQL - buscaPorId");
+        Cliente cliente = clienteMySQLSpringRepository.findById(idCliente)
+                        .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
+        log.info("[Inicia] ClienteRepositoryMySQL - buscaPorId");
+        return cliente;
     }
 }
