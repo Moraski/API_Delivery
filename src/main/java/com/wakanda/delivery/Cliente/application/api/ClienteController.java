@@ -38,8 +38,8 @@ public class ClienteController implements ClienteAPI{
     public ClienteResponse atualizaCliente(UUID idCliente, EditaClienteRequest cliente) {
         log.info("[Inicia] ClienteController - atualizaCliente");
         log.info("[idUsuario] {}", idCliente);
-        ClienteResponse clienteResponse = clienteService.atualizarCliente(idCliente, cliente);
+        ClienteResponse clieteResponse = clienteService.AtualizaCliente(idCliente, cliente);
         log.info("[Inicia] ClienteController - atualizaCliente");
-        return null;
+        return clieteResponse;
     }
 }
