@@ -15,4 +15,6 @@ public interface ClienteService {
      ClienteResponse buscarClientePorId(@PathVariable UUID idCliente);
 
      ClienteResponse AtualizaCliente(UUID idCliente, EditaClienteRequest cliente);
+
+     void DeletaCliente(UUID idCliente);
 }
