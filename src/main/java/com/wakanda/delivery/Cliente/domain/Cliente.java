@@ -36,6 +36,7 @@ public class Cliente {
     private String endereco;
 
     public Cliente(@Valid ClienteNovoRequest clienteNovo) {
+        this.idCliente = clienteNovo.getIdCliente();
         this.nome = clienteNovo.getNome();
         this.cpf = clienteNovo.getCpf();
         this.email = clienteNovo.getEmail();
