@@ -1,7 +1,6 @@
 package com.wakanda.delivery.Cliente.application.api;
 
 import jakarta.validation.Valid;
-import lombok.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +15,13 @@ public interface ClienteAPI {
     ClienteResponse postNovoCliente(@RequestBody @Valid ClienteNovoRequest cliente);
 
     @GetMapping(value = "/{idCliente}")
-    @ResponseStatus(code = HttpStatus.FOUND)
+    @ResponseStatus(code = HttpStatus.OK)
     ClienteResponse getClientePorId(@PathVariable UUID idClietne);
+
+    @PutMapping(value = "/{idCliente}")
+    @ResponseStatus(code = HttpStatus.OK)
+    ClienteResponse atualizaCliente(@PathVariable UUID idCliente, @RequestBody @Valid EditaClienteRequest cliente);
+
+
 
 }
