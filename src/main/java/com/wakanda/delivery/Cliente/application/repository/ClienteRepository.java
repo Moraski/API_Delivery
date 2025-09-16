@@ -9,4 +9,6 @@ public interface ClienteRepository {
     Cliente salva(Cliente cliente);
 
     Cliente buscaPorId(UUID idCliente);
+
+    void deleta(UUID idCliente);
 }
