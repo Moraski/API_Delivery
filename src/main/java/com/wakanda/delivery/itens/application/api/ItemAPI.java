@@ -12,5 +12,5 @@ public interface ItemAPI {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    ClienteResponse postNovoItem(@RequestBody @Valid ItemNovoRequest item);
+    ItemResponse postNovoItem(@RequestBody @Valid ItemNovoRequest item);
 }
