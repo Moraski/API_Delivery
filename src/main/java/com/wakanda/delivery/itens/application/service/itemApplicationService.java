@@ -30,8 +30,8 @@ public class itemApplicationService implements ItemService{
         @Override
         public ItemResponse buscaItemPorId(UUID idItem) {
             log.info("[Inicia] ClienteApplicationService - criaNovoCliente");
-            itemRepository.buscaPorId(idItem);
+            Item item = itemRepository.buscaPorId(idItem);
             log.info("[Finaliza] ClienteApplicationService - criaNovoCliente");
-            return n;
+            return new ItemResponse(item);
         }
 }
