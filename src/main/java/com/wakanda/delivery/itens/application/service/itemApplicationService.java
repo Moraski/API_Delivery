@@ -51,7 +51,7 @@ public class itemApplicationService implements ItemService{
     @Override
     public void deleteItem(UUID idItem) {
         log.info("[Inicia] ClienteApplicationService - deleteItem");
-        itemRepository.Deleta(idItem);
+        itemRepository.deleta(idItem);
         log.info("[Finaliza] ClienteApplicationService - deleteItem");
 
     }
