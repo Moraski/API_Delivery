@@ -1,6 +1,5 @@
 package com.wakanda.delivery.itens.infra;
 
-import com.wakanda.delivery.Cliente.domain.Cliente;
 import com.wakanda.delivery.itens.application.repository.ItemRepository;
 import com.wakanda.delivery.itens.domain.Itens;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +19,5 @@ public class ItemRepositoryMySQL implements ItemRepository {
         Itens novoItem = itensMySQLSpringRepository.save(itens);
         log.info("[Finaliza] ItemRepositoryMySQL - salva");
         return novoItem;
-
-
     }
 }
