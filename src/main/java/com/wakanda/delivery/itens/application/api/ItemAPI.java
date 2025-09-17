@@ -21,4 +21,8 @@ public interface ItemAPI {
     @PutMapping("/{idItem}")
     @ResponseStatus(code = HttpStatus.OK)
     ItemResponse putItemById(@PathVariable UUID idItem, @RequestBody @Valid EditaItemRequest item);
+
+    @DeleteMapping("/{idItem}/delete")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deleteItem(@PathVariable UUID idItem);
 }

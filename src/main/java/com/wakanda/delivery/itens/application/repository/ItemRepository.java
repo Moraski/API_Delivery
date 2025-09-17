@@ -9,4 +9,6 @@ public interface ItemRepository {
     Item salva(Item item);
 
     Item buscaPorId(UUID idItem);
+
+    void deleta(UUID idItem);
 }

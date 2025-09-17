@@ -33,4 +33,9 @@ public class ItemRepositoryMySQL implements ItemRepository {
         log.info("[Finaliza] ItemRepositoryMySQL - buscaPorId");
         return item;
     }
+
+    @Override
+    public void deleta(UUID idItem) {
+        itensMySQLSpringRepository.deleteById(idItem);
+    }
 }
