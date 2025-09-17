@@ -1,6 +1,7 @@
 package com.wakanda.delivery.itens.domain;
 
 import com.wakanda.delivery.handler.APIException;
+import com.wakanda.delivery.itens.application.api.EditaItemRequest;
 import com.wakanda.delivery.itens.application.api.ItemNovoRequest;
 import com.wakanda.delivery.itens.application.api.ItemResponse;
 import jakarta.persistence.*;
@@ -47,13 +48,13 @@ public class Item {
         this.descricao = itemNovo.getDescricao();
     }
 
-    public void editaItem(String produto, Double valorUnitario, Integer quantidade, String descricao){
+    public void editaItem(EditaItemRequest editaItem){
         if (produto == null || produto.isBlank()){
             throw APIException.build(HttpStatus.BAD_REQUEST, "produto não pode estar vazio");
         }
-        this.produto = produto;
-        this.valorUnitario = valorUnitario;
-        this.quantidade = quantidade;
-        this.descricao = descricao;
+        this.produto = editaItem.getProduto();
+        this.valorUnitario = editaItem.getValorUnitario();
+        this.quantidade = editaItem.getQuantidade();
+        this.descricao = editaItem.getDescricao();
     }
 }
