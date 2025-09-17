@@ -14,4 +14,6 @@ public interface ItemService {
     ItemResponse buscaItemPorId(UUID idItem);
 
     ItemResponse editaItemPorId(UUID idItem, EditaItemRequest item);
+
+    void deleteItem(UUID idItem);
 }
