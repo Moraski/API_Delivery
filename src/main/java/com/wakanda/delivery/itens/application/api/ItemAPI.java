@@ -24,5 +24,5 @@ public interface ItemAPI {
 
     @DeleteMapping("/{idItem}/delete")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    ItemResponse deleteItem(@PathVariable UUID idItem);
+    void deleteItem(@PathVariable UUID idItem);
 }
