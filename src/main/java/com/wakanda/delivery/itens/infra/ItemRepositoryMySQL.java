@@ -1,7 +1,7 @@
 package com.wakanda.delivery.itens.infra;
 
 import com.wakanda.delivery.itens.application.repository.ItemRepository;
-import com.wakanda.delivery.itens.domain.Itens;
+import com.wakanda.delivery.itens.domain.Item;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -14,9 +14,9 @@ public class ItemRepositoryMySQL implements ItemRepository {
     private final ItensMySQLSpringRepository itensMySQLSpringRepository;
 
     @Override
-    public Itens salva(Itens itens) {
+    public Item salva(Item item) {
         log.info("[Inicia] ItemRepositoryMySQL - salva");
-        Itens novoItem = itensMySQLSpringRepository.save(itens);
+        Item novoItem = itensMySQLSpringRepository.save(item);
         log.info("[Finaliza] ItemRepositoryMySQL - salva");
         return novoItem;
     }
