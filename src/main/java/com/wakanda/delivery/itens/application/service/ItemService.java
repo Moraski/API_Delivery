@@ -9,4 +9,6 @@ import java.util.UUID;
 public interface ItemService {
 
     ItemResponse criaNovoItem(@Valid ItemNovoRequest item);
+
+    ItemResponse buscaItemPorId(UUID idItem);
 }

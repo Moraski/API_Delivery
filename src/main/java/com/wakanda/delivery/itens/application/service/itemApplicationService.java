@@ -26,4 +26,12 @@ public class itemApplicationService implements ItemService{
             log.info("[Finaliza] ClienteApplicationService - criaNovoCliente");
             return new ItemResponse(item);
         }
+
+        @Override
+        public ItemResponse buscaItemPorId(UUID idItem) {
+            log.info("[Inicia] ClienteApplicationService - criaNovoCliente");
+            itemRepository.buscaPorId(idItem);
+            log.info("[Finaliza] ClienteApplicationService - criaNovoCliente");
+            return n;
+        }
 }
