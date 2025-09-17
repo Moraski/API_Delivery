@@ -25,10 +25,18 @@ public class ItemController implements ItemAPI{
     }
 
     @Override
-    public ItemResponse getNovoItem(UUID idItem) {
+    public ItemResponse getItemById(UUID idItem) {
         log.info("[Inicia] ItemController - getNovoItem");
         ItemResponse response = itemservece.buscaItemPorId(idItem);
         log.info("[Finaliza] ItemController - getNovoItem");
+        return response;
+    }
+
+    @Override
+    public ItemResponse putItemById(UUID idItem, EditaItemRequest item) {
+        log.info("[Inicia] ItemController - putItemById");
+        ItemResponse response = itemservece.editaItemPorId(idItem, item);
+        log.info("[Finaliza] ItemController - putItemById");
         return response;
     }
 }

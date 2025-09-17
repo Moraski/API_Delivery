@@ -1,5 +1,7 @@
 package com.wakanda.delivery.itens.application.service;
 
+import com.wakanda.delivery.Cliente.domain.Cliente;
+import com.wakanda.delivery.itens.application.api.EditaItemRequest;
 import com.wakanda.delivery.itens.application.api.ItemNovoRequest;
 import com.wakanda.delivery.itens.application.api.ItemResponse;
 import com.wakanda.delivery.itens.application.repository.ItemRepository;
@@ -34,4 +36,15 @@ public class itemApplicationService implements ItemService{
             log.info("[Finaliza] ClienteApplicationService - criaNovoCliente");
             return new ItemResponse(item);
         }
+
+    @Override
+    public ItemResponse editaItemPorId(UUID idItem, EditaItemRequest itemEditado) {
+
+        log.info("[Inicia] ClienteApplicationService - editaItemPorId");
+        Item item = itemRepository.buscaPorId(idItem);
+        item.editaItem(itemEditado);
+        itemRepository.salva(item);
+        log.info("[Finaliza] ClienteApplicationService - editaItemPorId");
+        return new ItemResponse(item);
+    }
 }
