@@ -15,7 +15,7 @@ public interface ItemAPI {
     @ResponseStatus(code = HttpStatus.CREATED)
     ItemResponse postNovoItem(@RequestBody @Valid ItemNovoRequest item);
 
-    @GetMapping
+    @GetMapping("/{idItem}")
     @ResponseStatus(code = HttpStatus.OK)
     ItemResponse getNovoItem(@PathVariable UUID idItem);
 }
