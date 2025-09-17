@@ -1,6 +1,6 @@
 package com.wakanda.delivery.itens.application.api;
 
-import com.wakanda.delivery.itens.domain.Itens;
+import com.wakanda.delivery.itens.domain.Item;
 import lombok.Value;
 import java.util.UUID;
 
@@ -14,12 +14,12 @@ public class ItemResponse {
     String descricao;
 
 
-    public ItemResponse(Itens itens) {
-        this.idItem = itens.getIdItem();
-        this.produto = itens.getProduto();
-        this.valorUnitario = itens.getValorUnitario();
-        this.quantidade = itens.getQuantidade();
-        this.descricao = itens.getDescricao();
+    public ItemResponse(Item item) {
+        this.idItem = item.getIdItem();
+        this.produto = item.getProduto();
+        this.valorUnitario = item.getValorUnitario();
+        this.quantidade = item.getQuantidade();
+        this.descricao = item.getDescricao();
     }
 }
 

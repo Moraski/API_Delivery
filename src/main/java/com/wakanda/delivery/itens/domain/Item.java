@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
 
-import java.util.List;
 import java.util.UUID;
 @Entity
 @Table(name = "itens")
@@ -14,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @ToString
-public class Itens {
+public class Item {
 
 
     @Id
@@ -33,7 +32,7 @@ public class Itens {
     @Column(nullable = false)
     private String descricao;
 
-    public Itens(@Valid ItemNovoRequest itemNovo){
+    public Item(@Valid ItemNovoRequest itemNovo){
         this.idItem = itemNovo.getIdItem();
         this.produto = itemNovo.getProduto();
         this.valorUnitario = itemNovo.getValorUnitario();

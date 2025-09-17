@@ -1,8 +1,12 @@
 package com.wakanda.delivery.itens.application.repository;
 
-import com.wakanda.delivery.itens.domain.Itens;
+import com.wakanda.delivery.itens.domain.Item;
+
+import java.util.UUID;
 
 public interface ItemRepository {
 
-    Itens salva(Itens itens);
+    Item salva(Item item);
+
+    Item buscaPorId(UUID idItem);
 }
