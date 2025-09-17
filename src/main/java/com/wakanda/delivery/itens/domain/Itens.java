@@ -1,6 +1,8 @@
 package com.wakanda.delivery.itens.domain;
 
+import com.wakanda.delivery.itens.application.api.ItemNovoRequest;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.*;
 
 import java.util.List;
@@ -30,4 +32,12 @@ public class Itens {
 
     @Column(nullable = false)
     private String descricao;
+
+    public Itens(@Valid ItemNovoRequest itemNovo){
+        this.idItem = itemNovo.getIdItem();
+        this.produto = itemNovo.getProduto();
+        this.valorUnitario = itemNovo.getValorUnitario();
+        this.quantidade = itemNovo.getQuantidade();
+        this.descricao = itemNovo.getDescricao();
+    }
 }
