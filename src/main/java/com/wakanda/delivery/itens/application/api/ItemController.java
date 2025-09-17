@@ -6,6 +6,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @Validated
 @Log4j2
@@ -19,6 +21,14 @@ public class ItemController implements ItemAPI{
         log.info("[Inicia] ItemController - postNovoItem");
         ItemResponse response = itemservece.criaNovoItem(item);
         log.info("[Finaliza] ItemController - postNovoItem");
+        return response;
+    }
+
+    @Override
+    public ItemResponse getNovoItem(UUID idItem) {
+        log.info("[Inicia] ItemController - getNovoItem");
+        ItemResponse response = itemservece.buscaItemPorId(idItem);
+        log.info("[Finaliza] ItemController - getNovoItem");
         return response;
     }
 }
