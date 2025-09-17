@@ -25,7 +25,7 @@ public class ItemController implements ItemAPI{
     }
 
     @Override
-    public ItemResponse getNovoItem(UUID idItem) {
+    public ItemResponse getItemById(UUID idItem) {
         log.info("[Inicia] ItemController - getNovoItem");
         ItemResponse response = itemservece.buscaItemPorId(idItem);
         log.info("[Finaliza] ItemController - getNovoItem");
