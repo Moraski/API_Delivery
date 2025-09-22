@@ -3,6 +3,8 @@ package com.wakanda.delivery.Entrega.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import com.wakanda.delivery.entrega.domain.StatusEntrega;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
@@ -29,9 +31,10 @@ public class Entrega {
     @Column(nullable = false)
     private StatusEntrega status;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
+    @Column(name = "data_criacao", nullable = false)
+    private LocalDateTime dataCriacao;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataEntrega;
+    @Column(name = "data_entrega")
+    private LocalDateTime dataEntrega;
+
 }
