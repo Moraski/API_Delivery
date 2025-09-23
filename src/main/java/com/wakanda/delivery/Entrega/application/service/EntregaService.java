@@ -1,0 +1,12 @@
+package com.wakanda.delivery.Entrega.application.service;
+
+import com.wakanda.delivery.Cliente.application.api.ClienteResponse;
+import com.wakanda.delivery.Entrega.application.api.EntregaResponse;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.UUID;
+
+public interface EntregaService {
+
+    EntregaResponse buscaEntregaPorId(@PathVariable UUID idEntrega);
+}
