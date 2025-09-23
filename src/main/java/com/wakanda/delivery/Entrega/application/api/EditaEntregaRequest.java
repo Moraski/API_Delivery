@@ -1,6 +1,6 @@
 package com.wakanda.delivery.Entrega.application.api;
 
-import com.wakanda.delivery.entrega.domain.StatusEntrega;
+import com.wakanda.delivery.Entrega.domain.StatusEntrega;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,5 @@
 package com.wakanda.delivery.Entrega.application.service;
 
-import com.wakanda.delivery.Cliente.application.api.ClienteResponse;
 import com.wakanda.delivery.Entrega.application.api.EntregaResponse;
 import org.springframework.web.bind.annotation.PathVariable;
 

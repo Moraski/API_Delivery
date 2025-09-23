@@ -1,7 +1,6 @@
 package com.wakanda.delivery.Entrega.application.service;
 
-import com.wakanda.delivery.Cliente.application.api.ClienteResponse;
-import com.wakanda.delivery.Cliente.domain.Cliente;
+
 import com.wakanda.delivery.Entrega.application.api.EntregaResponse;
 import com.wakanda.delivery.Entrega.application.repository.EntregaRepository;
 import com.wakanda.delivery.Entrega.domain.Entrega;

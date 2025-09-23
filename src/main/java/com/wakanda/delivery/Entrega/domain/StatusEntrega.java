@@ -1,4 +1,4 @@
-package com.wakanda.delivery.entrega.domain;
+package com.wakanda.delivery.Entrega.domain;
 
 public enum StatusEntrega {
     PENDENTE,

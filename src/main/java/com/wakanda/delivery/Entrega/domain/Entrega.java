@@ -2,10 +2,8 @@ package com.wakanda.delivery.Entrega.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import com.wakanda.delivery.entrega.domain.StatusEntrega;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.UUID;
 
 @Entity

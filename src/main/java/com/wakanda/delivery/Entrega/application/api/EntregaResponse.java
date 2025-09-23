@@ -1,9 +1,8 @@
 package com.wakanda.delivery.Entrega.application.api;
 
-import com.wakanda.delivery.Cliente.domain.Cliente;
+
 import com.wakanda.delivery.Entrega.domain.Entrega;
-import jakarta.persistence.GeneratedValue;
-import  com.wakanda.delivery.entrega.domain.StatusEntrega ;
+import  com.wakanda.delivery.Entrega.domain.StatusEntrega ;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
