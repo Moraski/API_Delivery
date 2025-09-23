@@ -3,13 +3,16 @@ package com.wakanda.delivery.Entrega.application.api;
 
 import com.wakanda.delivery.Entrega.domain.Entrega;
 import  com.wakanda.delivery.Entrega.domain.StatusEntrega ;
+import lombok.Value;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Value
 public class EntregaResponse {
 
 
-    private UUID idEntrega;
+    UUID idEntrega;
     Pedido pedido;
     String endereco;
     StatusEntrega status;
