@@ -1,7 +1,10 @@
 package com.wakanda.delivery.Entrega.domain;
 
+import com.wakanda.delivery.Entrega.application.api.EditaEntregaRequest;
+import com.wakanda.delivery.handler.APIException;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -35,4 +38,11 @@ public class Entrega {
     @Column(name = "data_entrega")
     private LocalDateTime dataEntrega;
 
+    public void editaEntrega(EditaEntregaRequest entrega){
+        if (entrega.getStatus() == null){
+            throw APIException.build(HttpStatus.BAD_REQUEST, "status de entrega não pode estar vazio");
+        }
+        this.status = entrega.getStatus();
+
+    }
 }
