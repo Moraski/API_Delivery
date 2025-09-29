@@ -36,10 +36,6 @@ public class Pedido {
     @Column(nullable = false, updatable = false)
     private LocalDateTime dataCriacao;
 
-    @PrePersist
-    private void prePersist(){
-
-    }
 
     public Pedido(UUID idCliente){
         this.idCliente = idCliente;
