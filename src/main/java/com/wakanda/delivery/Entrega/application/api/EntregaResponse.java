@@ -3,6 +3,7 @@ package com.wakanda.delivery.Entrega.application.api;
 
 import com.wakanda.delivery.Entrega.domain.Entrega;
 import  com.wakanda.delivery.Entrega.domain.StatusEntrega ;
+import com.wakanda.delivery.Pedido.domain.Pedido;
 import lombok.Value;
 
 import java.time.LocalDateTime;
