@@ -1,5 +1,6 @@
 package com.wakanda.delivery.pedido.domain;
 
+import com.wakanda.delivery.Pedido.domain.Pedido;
 import com.wakanda.delivery.itens.domain.Item;
 import jakarta.persistence.*;
 import lombok.*;

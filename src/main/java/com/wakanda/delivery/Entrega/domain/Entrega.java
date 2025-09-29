@@ -1,6 +1,7 @@
 package com.wakanda.delivery.Entrega.domain;
 
 import com.wakanda.delivery.Entrega.application.api.EditaEntregaRequest;
+import com.wakanda.delivery.Pedido.domain.Pedido;
 import com.wakanda.delivery.handler.APIException;
 import jakarta.persistence.*;
 import lombok.*;
