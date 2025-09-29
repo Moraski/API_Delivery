@@ -25,4 +25,13 @@ public class EntregaController implements EntregaAPI{
         log.info("[Inicia] EntregaController - getEntregaByID");
         return entregaResponse;
     }
+
+    @Override
+    public EntregaResponse UpdateEntrega(UUID idEntrega, EditaEntregaRequest editaEntregaRequest) {
+        log.info("[Inicia] EntregaController - UpdateEntrega");
+        log.info("[id Entrega] {}", idEntrega);
+        EntregaResponse entregaResponse = entregaService.editaEntrega(idEntrega, editaEntregaRequest);
+        log.info("[Inicia] EntregaController - UpdateEntrega");
+        return entregaResponse;
+    }
 }

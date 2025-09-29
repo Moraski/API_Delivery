@@ -1,5 +1,6 @@
 package com.wakanda.delivery.Entrega.infra;
 
+import com.wakanda.delivery.Entrega.application.api.EditaEntregaRequest;
 import com.wakanda.delivery.Entrega.application.repository.EntregaRepository;
 import com.wakanda.delivery.Entrega.domain.Entrega;
 import com.wakanda.delivery.handler.APIException;
@@ -22,7 +23,16 @@ public class EntregaRepositoryMySQL implements EntregaRepository {
         log.info("[Inicia] EntregaRepositoryMySQL - buscaPorId");
         Entrega entrega = entregaMySQLSpringRepository.findById(idEntrega)
                 .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Entrega Invalida"));
-        log.info("[Inicia] EntregaRepositoryMySQL - buscaPorId");
+        log.info("[Finaliza] EntregaRepositoryMySQL - buscaPorId");
         return entrega;
     }
+
+    @Override
+    public Entrega salvar(Entrega entrega) {
+        log.info("[Inicia] EntregaRepositoryMySQL - buscaPorId");
+        Entrega Novaentrega = entregaMySQLSpringRepository.save(entrega);
+        log.info("[Finaliza] EntregaRepositoryMySQL - buscaPorId");
+        return null;
+    }
+    
 }
