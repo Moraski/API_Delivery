@@ -2,9 +2,11 @@ package com.wakanda.delivery.Entrega.application.service;
 
 
 import com.wakanda.delivery.Entrega.application.api.EditaEntregaRequest;
+import com.wakanda.delivery.Entrega.application.api.EntregaRequest;
 import com.wakanda.delivery.Entrega.application.api.EntregaResponse;
 import com.wakanda.delivery.Entrega.application.repository.EntregaRepository;
 import com.wakanda.delivery.Entrega.domain.Entrega;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -32,6 +34,15 @@ public class EntregaApplicationService implements EntregaService{
         entrega.editaEntrega(editaEntregaRequest);
         entregaRepository.salvar(entrega);
         log.info("[Finaliza] EntregaApplicationService - editaCliente");
+        return new EntregaResponse(entrega);
+    }
+
+    @Override
+    public EntregaResponse novaEntrega(@Valid EntregaRequest entregaRequest) {
+        log.info("[Inicia] EntregaApplicationService - novaEntrega");
+        var entrega = new Entrega(entregaRequest);
+        entregaRepository.salvar(entrega);
+        log.info("[Finaliza] EntregaApplicationService - novaEntrega");
         return new EntregaResponse(entrega);
     }
 

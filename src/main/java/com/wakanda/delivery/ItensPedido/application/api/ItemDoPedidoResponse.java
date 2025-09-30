@@ -1,5 +1,6 @@
-package com.wakanda.delivery.Pedido.application.api;
+package com.wakanda.delivery.ItensPedido.application.api;
 
+import com.wakanda.delivery.ItensPedido.domain.ItemDoPedido;
 import lombok.Getter;
 
 import java.util.UUID;
@@ -12,7 +13,7 @@ public class ItemDoPedidoResponse {
     private final Double valorUnitario;
     private final Double subtotal;
 
-    public ItemDoPedidoResponse(com.wakanda.delivery.pedido.domain.ItemDoPedido itemDoPedido) {
+    public ItemDoPedidoResponse(ItemDoPedido itemDoPedido) {
         this.idItem = itemDoPedido.getItem().getIdItem();
         this.produto = itemDoPedido.getItem().getProduto();
         this.quantidade = itemDoPedido.getQuantidade();

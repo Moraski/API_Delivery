@@ -1,6 +1,7 @@
 package com.wakanda.delivery.Entrega.domain;
 
 import com.wakanda.delivery.Entrega.application.api.EditaEntregaRequest;
+import com.wakanda.delivery.Entrega.application.api.EntregaRequest;
 import com.wakanda.delivery.Pedido.domain.Pedido;
 import com.wakanda.delivery.handler.APIException;
 import jakarta.persistence.*;
@@ -46,4 +47,12 @@ public class Entrega {
         this.status = entrega.getStatus();
 
     }
+    public Entrega(EntregaRequest entregaRequest) {
+        this.pedido = entregaRequest.getPedido();
+        this.endereco = entregaRequest.getEndereco();
+        this.status = StatusEntrega.AGUARDANDO_COLETA; // define status inicial
+        this.dataCriacao = LocalDateTime.now();
+        this.dataEntrega = entregaRequest.getDataEntrega();
+    }
+
 }
