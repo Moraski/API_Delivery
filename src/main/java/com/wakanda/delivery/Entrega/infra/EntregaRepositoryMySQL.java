@@ -30,7 +30,7 @@ public class EntregaRepositoryMySQL implements EntregaRepository {
     @Override
     public Entrega salvar(Entrega entrega) {
         log.info("[Inicia] EntregaRepositoryMySQL - buscaPorId");
-        Entrega Novaentrega = entregaMySQLSpringRepository.save(entrega);
+        Entrega NovaEntrega = entregaMySQLSpringRepository.save(entrega);
         log.info("[Finaliza] EntregaRepositoryMySQL - buscaPorId");
         return null;
     }

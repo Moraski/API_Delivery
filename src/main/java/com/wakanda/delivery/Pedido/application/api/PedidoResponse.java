@@ -1,7 +1,8 @@
 package com.wakanda.delivery.Pedido.application.api;
 
-import com.wakanda.delivery.Entrega.domain.StatusEntrega;
+import com.wakanda.delivery.ItensPedido.application.api.ItemDoPedidoResponse;
 import com.wakanda.delivery.Pedido.domain.Pedido;
+import com.wakanda.delivery.Pedido.domain.StatusPedido;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ public class PedidoResponse {
     private final String enderecoEntrega;
     private final Double total;
     private final LocalDateTime dataCriacao;
-    private final StatusEntrega statusEntrega;
+    private final StatusPedido statusPedido;
     private final List<ItemDoPedidoResponse> itens;
 
     public PedidoResponse(Pedido pedido) {
@@ -26,7 +27,7 @@ public class PedidoResponse {
         this.enderecoEntrega = pedido.getEntrega() != null ? pedido.getEntrega().getEndereco() : null;
         this.total = pedido.getTotal();
         this.dataCriacao = pedido.getDataCriacao();
-        this.statusEntrega = pedido.getEntrega() != null ? pedido.getEntrega().getStatus() : null;
+        this.statusPedido = pedido.getStatusPedido();
 
         this.itens = pedido.getItens().stream()
                 .map(ItemDoPedidoResponse::new)

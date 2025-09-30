@@ -1,4 +1,4 @@
-package com.wakanda.delivery.Pedido.application.api;
+package com.wakanda.delivery.ItensPedido.application.api;
 
 import lombok.Getter;
 

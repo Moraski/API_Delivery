@@ -1,4 +1,4 @@
-package com.wakanda.delivery.pedido.domain;
+package com.wakanda.delivery.ItensPedido.domain;
 
 import com.wakanda.delivery.Pedido.domain.Pedido;
 import com.wakanda.delivery.itens.domain.Item;

@@ -1,7 +1,7 @@
 package com.wakanda.delivery.Entrega.domain;
 
 public enum StatusEntrega {
-    PENDENTE,
+    AGUARDANDO_COLETA,
     A_CAMINHO,
     ENTREGUE,
     CANCELADA
